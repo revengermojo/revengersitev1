@@ -1,0 +1,131 @@
+---
+const { title = "RevengerMojo" } = Astro.props;
+const PAGE_TITLE = `${title} — RevengerMojo`;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{PAGE_TITLE}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Elite non-profit hacker community. Cinematic neon terminal vibes. Labs, research, ops. Join the mesh."
+    />
+    <link rel="stylesheet" href="/css/hacker.css" />
+  </head>
+
+  <body>
+    <!-- Background FX layers -->
+    <canvas id="shader"></canvas>
+    <canvas id="matrix"></canvas>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+
+    <!-- HUD / Nav -->
+<header class="hud wrap">
+  <a class="logo glitch" data-text="RevengerMojo" href="/">RevengerMojo</a>
+
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+  <nav class="nav">
+    <a href="/arsenal">/arsenal</a>
+    <a href="/mission">/mission</a>
+    <a href="/about">/about</a>
+    <a href="/why">/why</a>
+    <a href="/join">/join</a>
+    <a href="/labs">/labs</a>
+    <a href="/blog">/blog</a>
+    <a href="/courses">/courses</a>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  });
+</script>
+
+
+    <!-- Page content -->
+    <main class="wrap section">
+      <slot />
+    </main>
+
+    <!-- Footer with neon icon buttons -->
+    <footer class="wrap footer">
+      <div class="socials">
+        <!-- Instagram -->
+        <a class="social insta" href="https://instagram.com/revengermojo" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1.2" />
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a class="social yt" href="https://youtube.com/@revengermojo" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="6" width="20" height="12" rx="3" />
+            <polygon points="10,9 16,12 10,15 10,9" />
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a class="social mail" href="mailto:revengermojo@proton.me" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="M3 7l9 6 9-6" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social li" href="https://www.linkedin.com/company/revengermojo" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <rect x="7" y="10" width="2" height="7" />
+            <circle cx="8" cy="7" r="1.2" />
+            <path d="M13 10h2.2a3 3 0 0 1 3 3v4h-2v-4c0-1-.6-1.6-1.6-1.6H13v5.6h-2V10h2z" />
+          </svg>
+        </a>
+
+        <!-- Medium -->
+        <a class="social med" href="https://medium.com/@revengermojo" target="_blank" rel="noopener" aria-label="Medium">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <path d="M7 16V8l4 6 4-6v8" />
+          </svg>
+        </a>
+
+        <!-- Twitter/X -->
+        <a class="social tw" href="https://twitter.com/revengermojo" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <path d="M8 9c2.5 3 6 5 10 5-.5 2-2 3.5-4 4 2 1 4.5 1.5 7 1.5-2 1.5-4.5 2.5-7.5 2.5C8 22 4 18 4 13c0-.4 0-.8.1-1.2" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="copy">
+        © {new Date().getFullYear()} RevengerMojo · security@revengermojo.org
+      </div>
+    </footer>
+
+    <!-- FX scripts -->
+    <script src="/js/fx-shader.js" defer></script>
+    <script src="/js/fx-matrix.js" defer></script>
+    <script src="/js/cursor.js" defer></script>
+  </body>
+</html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+

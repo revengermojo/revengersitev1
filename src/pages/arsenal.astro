@@ -1,0 +1,81 @@
+---
+import Shell from "../components/Shell.astro";
+---
+<Shell title="Arsenal">
+  <h1 class="big-neon">ARSENAL</h1>
+
+  <section class="manifesto">
+    <p>
+      Not every weapon is mainstream. Some of the sharpest tools hide in shadows, 
+      built by quiet minds who never cared for clout.
+    </p>
+    <p>
+      Here is a growing collection of underrated but powerful exploit tools, hand-picked by our crew.
+    </p>
+  </section>
+
+  <section class="arsenal-list">
+    <article class="card">
+      <h3>Rogue Toolkit</h3>
+      <p>A modular framework for rapid network exploit prototyping. Lightweight, built by independents.</p>
+      <a href="https://github.com/byt3bl33d3r/CrackMapExec" target="_blank" class="cta small">Explore</a>
+    </article>
+
+    <article class="card">
+  <h3>GitDorker</h3>
+  <p>Automated Google dorking to uncover exposed secrets in GitHub repositories. 
+  A hidden gem for bug bounty hunters.</p>
+  <a href="https://github.com/obheda12/GitDorker" target="_blank" class="cta small">Explore</a>
+</article>
+
+<article class="card">
+  <h3>XSStrike</h3>
+  <p>Powerful XSS detection and exploitation suite with intelligent fuzzing. 
+  Underrated compared to scanners, but highly effective.</p>
+  <a href="https://github.com/s0md3v/XSStrike" target="_blank" class="cta small">Explore</a>
+</article>
+
+    <article class="card">
+      <h3>CrackMapExec</h3>
+      <p>The “Swiss army knife” for pentesters working with Active Directory environments.</p>
+      <a href="https://github.com/byt3bl33d3r/CrackMapExec" target="_blank" class="cta small">Explore</a>
+    </article>
+
+    <article class="card">
+      <h3>Chisel</h3>
+      <p>A fast TCP/UDP tunnel over HTTP, useful for red teamers bypassing firewalls and NAT.</p>
+      <a href="https://github.com/jpillora/chisel" target="_blank" class="cta small">Explore</a>
+    </article>
+
+    <article class="card">
+      <h3>Sliver</h3>
+      <p>An open-source red team command and control framework, often overlooked against Cobalt Strike.</p>
+      <a href="https://github.com/BishopFox/sliver" target="_blank" class="cta small">Explore</a>
+    </article>
+  </section>
+
+  <section class="submission">
+    <h2 class="sectionTitle glitch" data-text="Submit a Tool">Submit a Tool</h2>
+    <p>
+      Know an underrated tool that deserves a place here? Submit it below.  
+      If it fits our vision, we’ll host it in the Arsenal.
+    </p>
+
+    <form action="https://formspree.io/f/mzzbkjna" method="POST" class="arsenal-form">
+      <label for="name">Tool Name</label>
+      <input type="text" id="name" name="tool_name" required />
+
+      <label for="desc">Description</label>
+      <textarea id="desc" name="description" rows="4" required></textarea>
+
+      <label for="link">Link (GitHub, site, etc.)</label>
+      <input type="url" id="link" name="tool_link" required />
+
+      <!-- hidden field so mails are tagged -->
+      <input type="hidden" name="_subject" value="New Arsenal Tool Submission" />
+      <input type="hidden" name="_cc" value="revengermojo@proton.me" />
+
+      <button type="submit" class="cta">Submit Tool</button>
+    </form>
+  </section>
+</Shell>
