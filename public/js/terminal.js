@@ -43,9 +43,9 @@ function run(cmd) {
     case "help": write(help); break;
     case "banner": write(banner); break;
     case "join": window.open("https://chat.whatsapp.com/YOUR_WHATSAPP_INVITE","_blank"); break;
-    case "labs": location.href="/labs"; break;
-    case "blog": location.href="/blog"; break;
-    case "courses": location.href="/courses"; break;
+    case "labs": location.href="labs"; break;
+    case "blog": location.href="blog"; break;
+    case "courses": location.href="courses"; break;
     case "whoami": write("operative"); break;
     case "motd": write(motd); break;
     case "clear": feed.innerHTML=""; break;
