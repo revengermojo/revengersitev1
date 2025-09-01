@@ -195,11 +195,11 @@ a, .cta, .mute, .card { min-height: 44px; }
 /* global skull cursor */
 /* skull cursor globally */
 html, body {
-  cursor: url("/cursor/skull.png") 32 32, auto !important;
+  cursor: url("/revengersitev1/cursor/skull.png") 32 32, auto !important;
 }
 
 a, button, .cta, .nav a {
-  cursor: url("/cursor/skull.png") 32 32, pointer !important;
+  cursor: url("/revengersitev1/cursor/skull.png") 32 32, pointer !important;
 }
 
 .feed-grid {
